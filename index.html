@@ -5,147 +5,133 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Чек-лист анонса стендап-концерта — Brooklyn Bowl</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#ffffff;--bg2:#f7f7f5;--bg3:#f0f0ee;
-  --text:#1a1a1a;--text2:#555;--text3:#999;
-  --border:#e0e0dc;--border2:#d0d0cc;
-  --red:#c0392b;--red-bg:#fdf2f1;
-  --green:#1a7a4a;--green-bg:#f0faf4;
-  --accent:#1a6cc0;--accent-bg:#eef4fc;
-  --radius:8px;--shadow:0 1px 4px rgba(0,0,0,.08);
+  --bg:#f5f0e8;--bg2:#ede8df;--bg3:#e4ddd2;
+  --card:#ffffff;--text:#1a1a1a;--text2:#5a5550;--text3:#9a948e;
+  --border:#d8d0c4;--border2:#c8bfb2;
+  --red:#c0392b;--red-hover:#a93224;--red-bg:#fdf2f1;
+  --green:#2e7d52;--green-bg:#edf7f2;--radius:8px;
 }
-@media(prefers-color-scheme:dark){
-  :root{
-    --bg:#1a1a1a;--bg2:#222;--bg3:#2a2a2a;
-    --text:#e8e8e4;--text2:#aaa;--text3:#666;
-    --border:#333;--border2:#444;
-    --red:#e05c4a;--red-bg:#2a1a18;
-    --green:#3dba78;--green-bg:#0f2318;
-    --accent:#5a9de0;--accent-bg:#12213a;
-  }
-}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.5;min-height:100vh}
-.page{max-width:760px;margin:0 auto;padding:2rem 1.25rem 4rem}
-
-/* header */
-.header{margin-bottom:2rem}
-.header h1{font-size:22px;font-weight:600;margin-bottom:1.25rem}
-.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+body{font-family:'Proxima Nova','Nunito','Montserrat',-apple-system,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.5;min-height:100vh}
+.page{max-width:780px;margin:0 auto;padding:2rem 1.25rem 4rem}
+.topbar{display:flex;align-items:center;gap:10px;margin-bottom:1.75rem}
+.logo-mark{width:32px;height:32px;background:var(--red);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-mark span{color:#fff;font-size:14px;font-weight:700;letter-spacing:-.5px}
+.topbar-titles h1{font-size:18px;font-weight:600;letter-spacing:-.01em;color:var(--text)}
+.topbar-titles p{font-size:11px;color:var(--text3);margin-top:1px}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.5rem}
 @media(max-width:500px){.meta-grid{grid-template-columns:1fr}}
-.meta-field label{display:block;font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
-.meta-field select,.meta-field input{width:100%;border:1px solid var(--border2);border-radius:var(--radius);padding:7px 10px;font-size:13px;background:var(--bg2);color:var(--text);outline:none;appearance:none;-webkit-appearance:none}
-.meta-field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px}
-.meta-field select:focus,.meta-field input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-bg)}
-
-/* progress */
-.progress-wrap{margin:1.5rem 0 2rem;display:flex;align-items:center;gap:12px}
-.progress-bar-bg{flex:1;height:5px;border-radius:3px;background:var(--bg3)}
-.progress-bar{height:100%;border-radius:3px;background:var(--red);transition:width .3s ease;width:0%}
-.progress-label{font-size:13px;color:var(--text2);min-width:52px;text-align:right;font-variant-numeric:tabular-nums}
-
-/* sections */
-.section{margin-bottom:1rem;border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.section-head{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;background:var(--bg2);border-bottom:1px solid var(--border)}
-.section-title{font-size:13px;font-weight:500;color:var(--text)}
-.section-badge{font-size:11px;padding:2px 8px;border-radius:20px;background:var(--bg3);color:var(--text3);border:1px solid var(--border)}
+.meta-field label{display:block;font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.meta-field select,.meta-field input{width:100%;border:1px solid var(--border2);border-radius:var(--radius);padding:7px 10px;font-size:13px;font-family:inherit;background:var(--card);color:var(--text);outline:none;appearance:none;-webkit-appearance:none}
+.meta-field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239a948e' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px}
+.meta-field select:focus,.meta-field input:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(192,57,43,.1)}
+.progress-wrap{display:flex;align-items:center;gap:12px;margin-bottom:1.75rem}
+.progress-bar-bg{flex:1;height:4px;border-radius:2px;background:var(--bg3)}
+.progress-bar{height:100%;border-radius:2px;background:var(--red);transition:width .35s ease;width:0%}
+.progress-label{font-size:12px;font-weight:600;color:var(--text2);min-width:48px;text-align:right;font-variant-numeric:tabular-nums}
+.section{margin-bottom:.875rem;background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.section-head{display:flex;align-items:center;justify-content:space-between;padding:.55rem 1rem;background:var(--bg2);border-bottom:1px solid var(--border)}
+.section-num{font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-right:8px}
+.section-title{font-size:12px;font-weight:600;color:var(--text);letter-spacing:.01em}
+.section-badge{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--bg3);color:var(--text3);font-weight:600;border:1px solid var(--border)}
 .section-badge.done-all{background:var(--green-bg);color:var(--green);border-color:transparent}
-
-/* col header */
-.col-header{display:grid;grid-template-columns:36px 1fr 170px;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;padding:5px 12px 5px 0;border-bottom:1px solid var(--border);background:var(--bg)}
-.col-header .ch-check{text-align:center}
-.col-header .ch-note{padding-left:8px}
-@media(max-width:540px){.col-header{grid-template-columns:36px 1fr};.col-header .ch-note{display:none}}
-
-/* items */
-.item{display:grid;grid-template-columns:36px 1fr 170px;border-bottom:1px solid var(--border);transition:background .15s}
+.col-header{display:grid;grid-template-columns:36px 1fr 175px;font-size:9px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;padding:4px 12px 4px 0;border-bottom:1px solid var(--border);background:var(--bg)}
+.ch-note{padding-left:8px}
+@media(max-width:560px){.col-header{grid-template-columns:36px 1fr}.ch-note{display:none}}
+.item{display:grid;grid-template-columns:36px 1fr 175px;border-bottom:1px solid var(--border);transition:background .15s}
 .item:last-child{border-bottom:none}
 .item.done{background:var(--green-bg)}
-@media(max-width:540px){.item{grid-template-columns:36px 1fr}}
-
+@media(max-width:560px){.item{grid-template-columns:36px 1fr}}
 .check-col{display:flex;align-items:flex-start;justify-content:center;padding:.65rem 0 .65rem .5rem}
 .check-col input[type=checkbox]{width:15px;height:15px;cursor:pointer;accent-color:var(--red);margin-top:2px;flex-shrink:0}
-
-.label-col{padding:.55rem .75rem .55rem .3rem}
-.item-label{font-size:13px;color:var(--text);line-height:1.4}
-.item.done .item-label{color:var(--text2);text-decoration:line-through;text-decoration-color:var(--border2)}
+.label-col{padding:.55rem .6rem .55rem .3rem}
+.item-label{font-size:13px;color:var(--text);line-height:1.4;font-weight:500}
+.item.done .item-label{color:var(--text3);text-decoration:line-through;text-decoration-color:var(--border2)}
 .item-hint{font-size:11px;color:var(--text3);margin-top:2px;line-height:1.4}
-
-.note-col{padding:.4rem .75rem .4rem .4rem;display:flex;align-items:center}
-.note-col input{width:100%;border:1px solid var(--border);border-radius:6px;padding:4px 8px;font-size:12px;background:var(--bg);color:var(--text);outline:none;height:28px}
-.note-col input:focus{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-bg)}
-@media(max-width:540px){.note-col{display:none}}
-
-/* buttons */
+.note-col{padding:.4rem .75rem .4rem .3rem;display:flex;align-items:center}
+.note-col input{width:100%;border:1px solid var(--border);border-radius:6px;padding:4px 8px;font-size:11px;font-family:inherit;background:var(--bg);color:var(--text);outline:none;height:27px}
+.note-col input:focus{border-color:var(--red);box-shadow:0 0 0 2px rgba(192,57,43,.1)}
+.note-col input::placeholder{color:var(--text3)}
+@media(max-width:560px){.note-col{display:none}}
 .btn-row{display:flex;gap:8px;justify-content:space-between;align-items:center;margin-top:1.5rem;flex-wrap:wrap}
-.btn-left{display:flex;gap:8px}
-button{cursor:pointer;border-radius:var(--radius);font-size:13px;padding:7px 14px;border:1px solid var(--border2);background:var(--bg2);color:var(--text);display:inline-flex;align-items:center;gap:6px;transition:all .15s;font-family:inherit}
-button:hover{background:var(--bg3);border-color:var(--border2)}
+button{cursor:pointer;border-radius:var(--radius);font-size:13px;font-family:inherit;font-weight:500;padding:8px 16px;border:1px solid var(--border2);background:var(--card);color:var(--text);display:inline-flex;align-items:center;gap:6px;transition:all .15s}
+button:hover{background:var(--bg2)}
 button:active{transform:scale(.98)}
 button.primary{background:var(--red);border-color:var(--red);color:#fff}
-button.primary:hover{opacity:.88}
+button.primary:hover{background:var(--red-hover);border-color:var(--red-hover)}
 button.ghost{color:var(--text3);border-color:var(--border)}
-
-/* print */
+button.ghost:hover{color:var(--text);background:var(--bg2)}
 @media print{
-  .btn-row{display:none}
+  body{background:#fff;color:#111}
+  .btn-row,.topbar-titles p{display:none}
+  .page{padding:1rem}
   .meta-field select,.meta-field input,.note-col input{border:1px solid #ccc!important;background:#fff!important;color:#111!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .item.done{background:#f0faf4!important}
+  .item.done{background:#edf7f2!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .progress-bar{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  body{color:#111;background:#fff}
-  .section{break-inside:avoid}
+  .section{break-inside:avoid;border:1px solid #ddd!important}
+  .section-head{background:#f5f0e8!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .col-header{background:#f5f0e8!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .logo-mark{background:#c0392b!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .note-col,.ch-note{display:flex!important}
 }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <div class="header">
-    <h1>Чек-лист анонса стендап-концерта</h1>
-    <div class="meta-grid">
-      <div class="meta-field">
-        <label>Артист</label>
-        <input id="m-artist" placeholder="Имя комика" oninput="saveMeta()">
-      </div>
-      <div class="meta-field">
-        <label>Дата концерта</label>
-        <input id="m-date" placeholder="дд.мм.гггг" oninput="saveMeta()">
-      </div>
-      <div class="meta-field">
-        <label>Площадка</label>
-        <select id="m-venue" onchange="saveMeta()">
-          <option value="">— выбрать —</option>
-          <optgroup label="Ижевск">
-            <option>Ижевск, Петровский</option>
-            <option>Ижевск, Матрица</option>
-          </optgroup>
-          <optgroup label="Москва">
-            <option>Москва, Северное Сияние</option>
-            <option>Москва, Красный Кит</option>
-          </optgroup>
-          <optgroup label="Нижневартовск">
-            <option>Нижневартовск, Юграмолл</option>
-          </optgroup>
-          <optgroup label="Самара">
-            <option>Самара, Гудок</option>
-            <option>Самара, Летаут</option>
-          </optgroup>
-          <optgroup label="Санкт-Петербург">
-            <option>СПб, ТРЦ</option>
-          </optgroup>
-          <optgroup label="Сургут">
-            <option>Сургут, Аура</option>
-          </optgroup>
-          <optgroup label="Тюмень">
-            <option>Тюмень, Остров</option>
-            <option>Тюмень, СитиМолл</option>
-          </optgroup>
-        </select>
-      </div>
-      <div class="meta-field">
-        <label>Проверил</label>
-        <input id="m-who" placeholder="Ответственный" oninput="saveMeta()">
-      </div>
+  <div class="topbar">
+    <div class="logo-mark"><span>BB</span></div>
+    <div class="topbar-titles">
+      <h1>Чек-лист анонса стендап-концерта</h1>
+      <p>Brooklyn Bowl — стандарт подготовки анонса</p>
+    </div>
+  </div>
+
+  <div class="meta-grid">
+    <div class="meta-field">
+      <label>Артист</label>
+      <input id="m-artist" placeholder="Имя комика" oninput="saveMeta()">
+    </div>
+    <div class="meta-field">
+      <label>Дата концерта</label>
+      <input id="m-date" placeholder="дд.мм.гггг" oninput="saveMeta()">
+    </div>
+    <div class="meta-field">
+      <label>Площадка</label>
+      <select id="m-venue" onchange="saveMeta()">
+        <option value="">— выбрать —</option>
+        <optgroup label="Ижевск">
+          <option>Ижевск, Петровский</option>
+          <option>Ижевск, Матрица</option>
+        </optgroup>
+        <optgroup label="Москва">
+          <option>Москва, Северное Сияние</option>
+          <option>Москва, Красный Кит</option>
+        </optgroup>
+        <optgroup label="Нижневартовск">
+          <option>Нижневартовск, Юграмолл</option>
+        </optgroup>
+        <optgroup label="Самара">
+          <option>Самара, Гудок</option>
+          <option>Самара, Летаут</option>
+        </optgroup>
+        <optgroup label="Санкт-Петербург">
+          <option>СПб, ТРЦ</option>
+        </optgroup>
+        <optgroup label="Сургут">
+          <option>Сургут, Аура</option>
+        </optgroup>
+        <optgroup label="Тюмень">
+          <option>Тюмень, Остров</option>
+          <option>Тюмень, СитиМолл</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="meta-field">
+      <label>Проверил</label>
+      <input id="m-who" placeholder="Ответственный" oninput="saveMeta()">
     </div>
   </div>
 
@@ -157,181 +143,123 @@ button.ghost{color:var(--text3);border-color:var(--border)}
   <div id="sections"></div>
 
   <div class="btn-row">
-    <div class="btn-left">
-      <button class="ghost" onclick="resetAll()">↺ Сбросить</button>
-    </div>
-    <button class="primary" onclick="window.print()">⬇ Сохранить PDF</button>
+    <button class="ghost" onclick="resetAll()">↺&nbsp;Сбросить</button>
+    <button class="primary" onclick="savePdfAndReset()">⬇&nbsp;Сохранить PDF</button>
   </div>
 
 </div>
-
 <script>
-const DATA = [
-  {
-    title:"1. Фундамент — логистика и юридическая чистота",
-    items:[
-      {l:"Название",            h:"Артист + формат (Сольный стендап-концерт) + Название программы"},
-      {l:"Тайминг",             h:"Время сбора гостей + время начала + ориентировочное окончание"},
-      {l:"Метка 18+",           h:"Видимая метка — не только в подвале страницы"},
-      {l:"Дисклеймер о языке",  h:"Предупреждение о ненормативной лексике — защита и фильтр аудитории"},
-    ]
-  },
-  {
-    title:"2. Контент и позиционирование",
-    items:[
-      {l:"Биографический «крючок»", h:"Уникальная черта артиста в первом абзаце — что отличает его от коллег"},
-      {l:"Триада тем",              h:"О чём концерт? 3 темы — зритель понимает, что его ждёт"},
-    ]
-  },
-  {
-    title:"3. Социальные доказательства и медиа",
-    items:[
-      {l:"Регалии цифрами",         h:"Подписчики, просмотры, статус финалиста / участника шоу"},
-      {l:"Видео-превью",            h:"Встроенный ролик — зритель «пробует» комика до покупки"},
-      {l:"Фотографии",              h:"Постер тура + 2–3 живых фото с прошлых выступлений"},
-      {l:"Ссылки на соцсети артиста", h:"Кнопки на Telegram, Instagram, YouTube"},
-    ]
-  },
-  {
-    title:"4. Конверсия — цена и CTA",
-    items:[
-      {l:"Цена на странице",   h:"«от X ₽» прямо на лендинге, не только после перехода в кассу"},
-      {l:"CTA «Купить билет»", h:"Контрастный цвет, дублируется вверху и внизу страницы"},
-      {l:"Сервисный CTA",      h:"Телефон / чат для бронирования стола — важно для ресторанных площадок"},
-    ]
-  },
-  {
-    title:"5. SEO и технические параметры",
-    items:[
-      {l:"H1 с ключами",        h:"Имя + Стендап + Город + Дата"},
-      {l:"Мета-описание",       h:"Кто, где, когда — кратко, под поисковый сниппет"},
-      {l:"Мобильная адаптация", h:"Проверить на смартфоне — ~90% трафика в этой нише мобильный"},
-    ]
-  },
-  {
-    title:"6. Дистрибуция — внешнее продвижение",
-    items:[
-      {l:"Соцсети артиста",         h:"Пост в Telegram / Stories в Instagram с прямой ссылкой на страницу"},
-      {l:"Соцсети площадки",        h:"Анонс в VK-паблике (закреплён) и в Telegram-канале площадки"},
-      {l:"Билетные агрегаторы",     h:"Яндекс.Афиша, Кассир, МТС Live — цена и описание совпадают с лендингом"},
-      {l:"Профильные каталоги",     h:"GoStandup, afisha.ru — регистрация конкретного события"},
-    ]
-  },
+const DATA=[
+  {num:"01",title:"Фундамент — логистика и юридическая чистота",items:[
+    {l:"Название",h:"Артист + формат (Сольный стендап-концерт) + Название программы"},
+    {l:"Тайминг",h:"Время сбора гостей + время начала + ориентировочное окончание"},
+    {l:"Метка 18+",h:"Видимая метка — не только в подвале страницы"},
+    {l:"Дисклеймер о языке",h:"Предупреждение о ненормативной лексике — защита и фильтр аудитории"},
+  ]},
+  {num:"02",title:"Контент и позиционирование",items:[
+    {l:"Биографический «крючок»",h:"Уникальная черта артиста в первом абзаце — что отличает его от коллег"},
+    {l:"Триада тем",h:"О чём концерт? 3 темы — зритель понимает, что его ждёт"},
+  ]},
+  {num:"03",title:"Социальные доказательства и медиа",items:[
+    {l:"Регалии цифрами",h:"Подписчики, просмотры, статус финалиста / участника шоу"},
+    {l:"Видео-превью",h:"Встроенный ролик — зритель «пробует» комика до покупки"},
+    {l:"Фотографии",h:"Постер тура + 2–3 живых фото с прошлых выступлений"},
+    {l:"Ссылки на соцсети артиста",h:"Кнопки на Telegram, Instagram, YouTube"},
+  ]},
+  {num:"04",title:"Конверсия — цена и CTA",items:[
+    {l:"Цена на странице",h:"«от X ₽» прямо на лендинге, не только после перехода в кассу"},
+    {l:"CTA «Купить билет»",h:"Контрастный цвет, дублируется вверху и внизу страницы"},
+    {l:"Сервисный CTA",h:"Телефон / чат для бронирования стола — важно для ресторанных площадок"},
+  ]},
+  {num:"05",title:"SEO и технические параметры",items:[
+    {l:"H1 с ключами",h:"Имя + Стендап + Город + Дата"},
+    {l:"Мета-описание",h:"Кто, где, когда — кратко, под поисковый сниппет"},
+    {l:"Мобильная адаптация",h:"Проверить на смартфоне — ~90% трафика в этой нише мобильный"},
+  ]},
+  {num:"06",title:"Дистрибуция — внешнее продвижение",items:[
+    {l:"Соцсети артиста",h:"Пост в Telegram / Stories в Instagram с прямой ссылкой на страницу"},
+    {l:"Соцсети площадки",h:"Анонс в VK-паблике (закреплён) и в Telegram-канале площадки"},
+    {l:"Билетные агрегаторы",h:"Яндекс.Афиша, Кассир, МТС Live — цена и описание совпадают с лендингом"},
+    {l:"Профильные каталоги",h:"GoStandup, afisha.ru — регистрация конкретного события"},
+  ]},
 ];
 
-const STORAGE = 'bb_sc_v2';
-let state = {checks:{}, notes:{}, meta:{}};
+const STORAGE='bb_sc_v3';
+let state={checks:{},notes:{},meta:{}};
+const total=DATA.reduce((s,sec)=>s+sec.items.length,0);
 
-function loadState(){
-  try{ const s=localStorage.getItem(STORAGE); if(s) state=JSON.parse(s); }catch(e){}
-}
-function saveState(){
-  try{ localStorage.setItem(STORAGE, JSON.stringify(state)); }catch(e){}
-}
+function loadState(){try{const s=localStorage.getItem(STORAGE);if(s)state=JSON.parse(s);}catch(e){}}
+function saveState(){try{localStorage.setItem(STORAGE,JSON.stringify(state));}catch(e){}}
 function saveMeta(){
-  state.meta = {
-    artist: document.getElementById('m-artist').value,
-    date:   document.getElementById('m-date').value,
-    venue:  document.getElementById('m-venue').value,
-    who:    document.getElementById('m-who').value,
+  state.meta={
+    artist:document.getElementById('m-artist').value,
+    date:document.getElementById('m-date').value,
+    venue:document.getElementById('m-venue').value,
+    who:document.getElementById('m-who').value,
   };
   saveState();
 }
 function applyMeta(){
-  const m = state.meta||{};
-  if(m.artist) document.getElementById('m-artist').value = m.artist;
-  if(m.date)   document.getElementById('m-date').value   = m.date;
-  if(m.venue)  document.getElementById('m-venue').value  = m.venue;
-  if(m.who)    document.getElementById('m-who').value    = m.who;
+  const m=state.meta||{};
+  if(m.artist)document.getElementById('m-artist').value=m.artist;
+  if(m.date)document.getElementById('m-date').value=m.date;
+  if(m.venue)document.getElementById('m-venue').value=m.venue;
+  if(m.who)document.getElementById('m-who').value=m.who;
 }
-
-const total = DATA.reduce((s,sec)=>s+sec.items.length, 0);
-
 function updateProgress(){
-  const done = Object.values(state.checks).filter(Boolean).length;
-  document.getElementById('prog-bar').style.width = (done/total*100)+'%';
-  document.getElementById('prog-label').textContent = done+' / '+total;
+  const done=Object.values(state.checks).filter(Boolean).length;
+  document.getElementById('prog-bar').style.width=(done/total*100)+'%';
+  document.getElementById('prog-label').textContent=done+' / '+total;
 }
-
 function render(){
-  const wrap = document.getElementById('sections');
-  wrap.innerHTML = '';
-  DATA.forEach((sec, si)=>{
-    const secDone = sec.items.filter((_,ii)=>state.checks[si+'-'+ii]).length;
-    const allDone = secDone === sec.items.length;
-    const div = document.createElement('div');
-    div.className = 'section';
-    div.innerHTML = `
-      <div class="section-head">
-        <span class="section-title">${sec.title}</span>
-        <span class="section-badge${allDone?' done-all':''}" id="badge-${si}">${secDone}/${sec.items.length}</span>
-      </div>
-      <div class="col-header">
-        <span class="ch-check"></span>
-        <span>Параметр</span>
-        <span class="ch-note">Комментарий</span>
-      </div>
-    `;
-    sec.items.forEach((item, ii)=>{
-      const id = si+'-'+ii;
-      const checked = state.checks[id];
-      const noteVal = (state.notes[id]||'').replace(/"/g,'&quot;');
-      const row = document.createElement('div');
-      row.className = 'item'+(checked?' done':'');
-      row.id = 'row-'+id;
-      row.innerHTML = `
-        <div class="check-col">
-          <input type="checkbox" ${checked?'checked':''} onchange="toggle('${id}',this.checked)">
-        </div>
-        <div class="label-col">
-          <div class="item-label">${item.l}</div>
-          <div class="item-hint">${item.h}</div>
-        </div>
-        <div class="note-col">
-          <input type="text" placeholder="Заметка..." value="${noteVal}" oninput="saveNote('${id}',this.value)">
-        </div>
-      `;
+  const wrap=document.getElementById('sections');
+  wrap.innerHTML='';
+  DATA.forEach((sec,si)=>{
+    const secDone=sec.items.filter((_,ii)=>state.checks[si+'-'+ii]).length;
+    const allDone=secDone===sec.items.length;
+    const div=document.createElement('div');
+    div.className='section';
+    div.innerHTML=`<div class="section-head"><span style="display:flex;align-items:center;gap:8px"><span class="section-num">${sec.num}</span><span class="section-title">${sec.title}</span></span><span class="section-badge${allDone?' done-all':''}" id="badge-${si}">${secDone}/${sec.items.length}</span></div><div class="col-header"><span></span><span>Параметр</span><span class="ch-note">Комментарий</span></div>`;
+    sec.items.forEach((item,ii)=>{
+      const id=si+'-'+ii;
+      const checked=state.checks[id];
+      const noteVal=(state.notes[id]||'').replace(/"/g,'&quot;');
+      const row=document.createElement('div');
+      row.className='item'+(checked?' done':'');
+      row.id='row-'+id;
+      row.innerHTML=`<div class="check-col"><input type="checkbox" ${checked?'checked':''} onchange="toggle('${id}',this.checked)"></div><div class="label-col"><div class="item-label">${item.l}</div><div class="item-hint">${item.h}</div></div><div class="note-col"><input type="text" placeholder="Заметка..." value="${noteVal}" oninput="saveNote('${id}',this.value)"></div>`;
       div.appendChild(row);
     });
     wrap.appendChild(div);
   });
 }
-
-function toggle(id, val){
-  state.checks[id] = val;
-  const row = document.getElementById('row-'+id);
-  if(row) row.className = 'item'+(val?' done':'');
-  const si = parseInt(id.split('-')[0]);
-  updateBadge(si);
+function toggle(id,val){
+  state.checks[id]=val;
+  const row=document.getElementById('row-'+id);
+  if(row)row.className='item'+(val?' done':'');
+  updateBadge(parseInt(id.split('-')[0]));
   updateProgress();
   saveState();
 }
-
 function updateBadge(si){
-  const sec = DATA[si];
-  const done = sec.items.filter((_,ii)=>state.checks[si+'-'+ii]).length;
-  const el = document.getElementById('badge-'+si);
-  if(el){
-    el.textContent = done+'/'+sec.items.length;
-    el.className = 'section-badge'+(done===sec.items.length?' done-all':'');
-  }
+  const sec=DATA[si];
+  const done=sec.items.filter((_,ii)=>state.checks[si+'-'+ii]).length;
+  const el=document.getElementById('badge-'+si);
+  if(el){el.textContent=done+'/'+sec.items.length;el.className='section-badge'+(done===sec.items.length?' done-all':'');}
 }
-
-function saveNote(id, val){
-  state.notes[id] = val;
-  saveState();
+function saveNote(id,val){state.notes[id]=val;saveState();}
+function clearAll(){
+  state={checks:{},notes:{},meta:{}};
+  saveState();render();updateProgress();
+  ['m-artist','m-date','m-who'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('m-venue').value='';
 }
-
-function resetAll(){
-  if(!confirm('Сбросить все галочки и заметки?')) return;
-  state.checks = {}; state.notes = {};
-  saveState(); render(); updateProgress();
+function resetAll(){if(!confirm('Сбросить все галочки и заметки?'))return;clearAll();}
+function savePdfAndReset(){
+  window.print();
+  setTimeout(clearAll,800);
 }
-
-loadState();
-render();
-applyMeta();
-updateProgress();
+loadState();render();applyMeta();updateProgress();
 </script>
 </body>
 </html>
